@@ -1,5 +1,5 @@
 import React from "react";
-import Main from "./main";
+
 import Card from 'react-bootstrap/Card';
 
 class Horned extends React.Component {

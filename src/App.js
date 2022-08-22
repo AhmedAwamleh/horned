@@ -6,7 +6,7 @@ import Header from './components/header';
 import Main from './components/main';
 import data from "./components/data.json"
 import SelectedBeast from './components/selectedBeast';
-import React, { Component } from 'react';
+import React from 'react';
 
 class App extends React.Component {
   constructor(props) {
