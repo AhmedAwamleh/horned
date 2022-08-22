@@ -8,6 +8,7 @@ import data from "./components/data.json"
 import SelectedBeast from './components/selectedBeast';
 import React from 'react';
 
+
 class App extends React.Component {
   constructor(props) {
     super(props)
@@ -28,12 +29,25 @@ class App extends React.Component {
       showModal: false
     })
   }
+  filterBeast = (e) => {
+    const hornNumber = parseInt(e.target.value);
+    let filterData = data;
+    if (hornNumber) {
+      filterData = data.filter(item => item.horns === hornNumber)
+    }
+    this.setState({
+      dataBeast: filterData
+    })
+  }
+
+
   render() {
     return (
       <div className="App">
         <Header />
-        <Main dataBeast={this.state.dataBeast} passModal={this.passModal} />
+        <Main dataBeast={this.state.dataBeast} passModal={this.passModal} filterBeast={this.filterBeast} />
         <SelectedBeast show={this.state.showModal} handleClose={this.handleClose} selectedBeast={this.state.selectedBeast} />
+
         <Footer />
       </div>
     );
